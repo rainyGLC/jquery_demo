@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>HTML上传图片预览</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="http://www.codefans.net/ajaxjs/jquery-1.6.2.min.js"></script>
+  </head>
+  <style type="text/css">
+    #box{
+      width: 200px;
+      height: 150px;
+      border: 1px dashed #333;
+      position: relative;
+    }
+    #file0{
+      width: 200px;
+      height: 150px;
+      opacity: 0;
+      position: relative;
+      z-index: 10;
+    }
+    #box img{
+      width: 200px;
+      height: 150px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      border: 0;
+    }
+  </style>
+  <body>
+    <h3>请选择图片文件：JPG/GIF</h3>
+    <form name="form0" id="form0">
+      <div id="box">
+        <input type="file" name="file0" id="file0" multiple="multiple" />
+        <img src="" id="img0">
+      </div>
+      <p id="text">未选择任何文件</p>
+    </form>
+    <script>
+      $("#file0").change(function() {
+        var objUrl = getObjectURL(this.files[0]);
+        console.log("objUrl = " + objUrl);
+        if(objUrl) {
+          $("#img0").attr("src", objUrl);
+        }
+      });
+      建立一個可存取到該file的url
+      function getObjectURL(file) {
+        var url = null;
+        if(window.createObjectURL != undefined) { // basic
+          url = window.createObjectURL(file);
+        } else if(window.URL != undefined) { // mozilla(firefox)
+          url = window.URL.createObjectURL(file);
+        } else if(window.webkitURL != undefined) { // webkit or chrome
+          url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+      }
+      
+      $("#file0").change(function() {
+        //显示图片的名字。
+        var path = $("#file0").val();
+        var arr = path.split("\\");
+        var name = arr[arr.length - 1];
+        console.log(name);
+        $("#text").html(name);
+      })
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div class="btn" style="background-color:red">
+    <canvas id="canvas" width="800" height="800"></canvas>
+  </div>
+
+</body>
+<script type="text/javascript">
+  var canvas = document.getElementById('canvas'); // 获取 canvas 元素
+  var context = canvas.getContext('2d'); // 获取 canvas 元素中上下文
+  // 获取 canvas 元素的宽高
+//   var canvas_width = canvas.width;
+//   var canvas_height = canvas.height;
+//   console.log(canvas_width,canvas_height); // 800 800
+//   context.moveTo(100,100);  // 把笔尖放在坐标轴(100,100)的位置上
+//   context.lineTo(200,200);  // 把笔从(100,100)走到了(200,200)
+//   context.lineWidth = 2;    // 设置笔的宽度
+//   context.strokeStyle = '#35b558'; //给绘制设置样式
+//   context.stroke();         // 具体的绘制需要调用 stroke 方法
+
+//   context.beginPath();
+//   context.moveTo(150,100);
+//   context.lineTo(250,200);
+//   context.closePath();
+//   context.strokeStyle = '#35b558';
+//   context.stroke();
+
+// context.lineWidth = 2;
+// context.strokeStyle = "#35b558";
+// context.arc(300,300,200,0,1.5 * Math.PI);
+// context.stroke();
+
+// 绘制画布剧中文字
+context.font = "bold 40px Arial";
+context.fillStyle = "#058";
+context.textAlign = 'center';
+context.textBaseline = 'middle';
+context.fillText('CANVAS',canvas.width/2,canvas.height/2);
+// 辅助线
+context.strokeStyle = '#e4e4e4';
+context.moveTo(0,canvas.height/2);
+context.lineTo(canvas.width,canvas.height/2);
+context.moveTo(canvas.width/2,0);
+context.lineTo(canvas.width/2,canvas.height);
+context.stroke();
+
+
+
+
+
+
+  // context.lineWidth = 2;
+  // context.strokeStyle = "blue";
+  // for (var i = 0; i < 10 ; i++) {
+  //     context.beginPath()
+  //     context.arc(10 + i * 50, 90,20,0,2 * Math.PI * (i+1)/10 )
+  //     // 添加closePath
+  //     context.closePath();
+  //     context.stroke();
+  // }
+
+  // context.strokeStyle = "#35b558";
+  // for (var i = 0; i < 10 ; i++) {
+  //     context.beginPath()
+  //     context.arc(10 + i * 50, 180,20,0,2 * Math.PI * (i+1)/10 )
+  //     // 没有添加closePath
+  //     context.stroke();
+  // }
+
+  // context.fillStyle = "blue";
+  // for (var i = 0; i < 10 ; i++) {
+  //     context.beginPath()
+  //     context.arc(10 + i * 50, 270,20,0,2 * Math.PI * (i+1)/10 )
+  //     context.fill();
+  // }
+
+
+//   var tangram = [
+//     {p:[{x:0,y:0},{x:800,y:0},{x:400,y:400}],color:'#caff67'},
+//     {p:[{x:0,y:0},{x:400,y:400},{x:0,y:800}],color:'#67becf'},
+//     {p:[{x:800,y:0},{x:800,y:400},{x:600,y:600},{600:200}],color:'#ef3d61'},
+//     {p:[{x:600,y:200},{x:600,y:600},{x:400,y:400}],color:'#f9f51a'},
+//     {p:[{x:400,y:400},{x:600,y:600},{x:400,y:800},{x:200,y:600}],color:'#a594c0'},
+//     {p:[{x:200,y:600},{x:400,y:800},{x:0,y:800}],color:'#fa8ecc'},
+//     {p:[{x:800,y:400},{x:800,y:800},{x:400,y:800}],color:'#f6ca29'},
+// ]
+
+// tangram.forEach(function(data,index){
+//     context.beginPath();
+//     context.moveTo(data.p[0].x,data.p[0].y);
+//     data.p.forEach(function(pos,p_index){
+//         context.lineTo(pos.x,pos.y)
+//     })
+//     context.closePath();
+//     // 填充颜色
+//     context.fillStyle = data.color;
+//     context.fill();
+//     // 描边
+//     context.strokeStyle = "black";
+//     context.lineWidth = 2;
+//     context.stroke();
+// })
+
+</script>
+</html>

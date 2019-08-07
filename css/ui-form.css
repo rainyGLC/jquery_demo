@@ -1,0 +1,57 @@
+.form-box{
+  margin:10px;
+}
+.ui-radio {
+  position: absolute;
+  display: none; 
+}
+.ui-radio + label {
+  position: relative;
+  display: inline-block;
+  padding-left: 30px;
+  cursor: pointer;
+  vertical-align: middle; 
+}
+.ui-radio + label:hover:before {
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  animation-name: hover-color; 
+}
+.ui-radio + label:before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  content: '';
+  border: 1px solid #c0c0c0; 
+  box-sizing:border-box;
+}
+.ui-radio + label:after {
+  position: absolute;
+  display: none;
+  content: ''; 
+}
+
+.ui-radio:checked + label:before {
+  animation-name: none; 
+}
+.ui-radio:checked + label:after {
+  display: block; 
+}
+
+.ui-radio + label:before {
+  border-radius: 50%; 
+}
+.active +label:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #04b102; 
+}
+.active:checked +label:before {
+  border: 1px solid #04b102; 
+}

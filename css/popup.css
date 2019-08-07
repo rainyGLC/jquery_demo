@@ -1,0 +1,522 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+.authentication-context{
+  position:fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: showmask .25s ease forwards;
+  z-index: 9999;
+  
+}
+@keyframes showmask {
+  0%{
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.authentication-mask{
+  height: 100%;
+  background:rgba(0,0,0,0.4);
+  opacity: 1;
+}
+.authentication-container{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  display: inline-block;
+  min-width: 685px;
+  background: #fff;
+  border-radius: 6px;
+}
+.certificate-container-one{
+  position: relative;
+  width: 820px;
+  display: inline-block;
+  padding:40px;
+}
+.container-close{
+  position: absolute;
+  top:12px;
+  right: 15px;
+  width:25px;
+  height:25px;
+  border-radius: 4px;
+  cursor: pointer;
+  background: url(../img/close.png) no-repeat center center #fff;
+}
+.certificate-one{
+  width: 100%;
+  display: inline-block;
+}
+.certificate-member-one{
+  position: relative;
+  /*padding-bottom: 20px;*/
+}
+.certificate-member-one .number{
+  position: absolute;
+  top:46px;
+  right: 0px;
+  width: 110px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius:10px;
+  font-size: 12px;
+  background-color: #eceff3;
+  color:#000;
+  cursor: pointer;
+}
+.number:hover{
+  color: #35b558;
+}
+.certificate-title{
+  margin-bottom: 10px;
+  vertical-align:middle;
+  height: 35px;
+  font-size: 18px;
+  color:#333;
+}
+.certificate-title img{
+  vertical-align: middle;
+  width: 40px;
+  height: 35px;
+  margin-left:10px;
+}
+.certificate-desc{
+  height: 30px;
+  font-size: 12px;
+  color: #666;
+  border-bottom:1px solid #e4e4e4;
+}
+.certificate-desc span{
+  color: #333;
+}
+.certificate-message-one{
+  display: inline-block;
+  padding:30px 0px 20px 20px;
+}
+.certificate-avator{
+  float: left;
+  width: 80px;
+  margin-right:60px;
+  cursor:pointer;
+}
+/*.certificate-avator img{
+  width: 80px;
+  height: 80px;
+  border: 1px solid #e4e4e4;
+  border-radius: 50%;
+}*/
+#box{
+  width: 80px;
+  height: 80px;
+  border:1px solid #e4e4e4;
+  position: relative;
+  border-radius: 50%;
+}
+
+#file{
+  width:80px;
+  height:80px;
+  opacity: 0;
+  position:relative;
+  z-index:10;
+  border-radius: 50%;
+}
+#box img{
+  width:80px;
+  height: 80px;
+  position: absolute;
+  left:0;
+  top: 0;
+  z-index: 1;
+  border:0;
+  border-radius: 50%;
+}
+/*.uploading-pic img{
+  width: 100%;
+  height: 100%;
+}*/
+.nember-name{
+  width: 80px;
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-top: 14px;
+  text-indent: 10px;
+  border: none;
+  border-bottom: 1px solid #e4e4e4;
+}
+.certificate-from{
+  float: left;
+  width: 550px;
+}
+.certificate-from .from-one{
+  height: 30px;
+}
+.from-one .sex{
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  color: #333;
+  margin-right: 4px;
+}
+.sex-container{
+  float: left;
+  position: relative;
+  width: 70px;
+  height: 30px;
+  margin-right: 43px;
+  border:1px solid #e4e4e4;
+  text-indent: 10px;
+}
+.sex-container #sex-select{
+  width: 70px;
+  height: 28px;
+  color: #999;
+  font-size:12px;
+  text-decoration: none;
+}
+.sex-container .sex-btn{
+  position: absolute;
+  top:4px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  background: #e4e4e4;
+}
+.sex-btn:before{
+  content:'';
+  position: absolute;
+  top:8px;
+  left:6px;
+  border-radius: 2px;
+  display: inline-block;
+  width: 0;
+  height:0;
+  border-top:6px solid #333;
+  border-left:4px solid transparent;
+  border-right: 4px solid transparent;
+}
+.sex-list{
+  position: absolute;
+  top: 28px;
+  left: 0px;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  border:1px solid #e4e4e4;
+  border-top: 0;
+  text-indent: 10px;
+  list-style: none;
+}
+.sex-list.active{
+  height: auto;
+}
+
+.sex-list .sex-item{
+  width: 100%;
+  height: 24px;
+  line-height: 24px;
+  color: #666;
+  cursor: pointer;
+  font-size:12px;
+  background: #fff;
+  text-indent: 10px;
+}
+.from-one .city{
+  float:left;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  color: #333;
+  margin-right: 4px;
+  text-indent: 10px;
+}
+.city-container{
+  float: left;
+  position: relative;
+  width: 265px;
+  height: 30px;
+  margin-right:10px;
+  border:1px solid #e4e4e4;
+  text-indent: 10px;
+}
+.city-container .city-select{
+  width: 100%;
+  height: 28px;
+  color: #999;
+  font-size: 12px;
+  text-indent:10px;
+}
+.from-two{
+  width: 100%;
+  float: left;
+  margin-top: 30px;
+  display: flex;
+}
+.status{
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 14px;
+}
+.message-title{
+  width: 350px;
+  margin-left: 10px;
+  font-size: 14px;
+  color:#333;
+  line-height: 20px;
+  border:1px solid #e4e4e4;
+  padding:10px;
+}
+#showSecTemplete{
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  margin-top:40px;
+  background: #bbb;
+  color:#fff;
+  font-size: 15px;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  background-color: #35b558;
+  border:1px solid #35b558;
+}
+/*#showSecTemplete.active{
+  background-color: #35b558;
+  border:1px solid #35b558;
+}*/
+
+.btn-cancel{
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  cursor:pointer;
+  border-radius: 2px;
+  background-color: #35b558;
+  border:1px solid #35b558;
+  margin-left:10px;
+}
+
+
+/*第二页*/
+.certificate-container-two{
+  position: relative;
+  width: 685px;
+  display: inline-block;
+  padding:40px;
+}
+.container-close{
+  position: absolute;
+  top:12px;
+  right: 15px;
+  width:25px;
+  height:25px;
+  border-radius: 4px;
+  cursor: pointer;
+  background: url(../img/close.png) no-repeat center center #fff;
+}
+.certificate-member{
+  position: relative;
+}
+.certificate-title{
+  margin-bottom: 10px;
+  vertical-align:middle;
+  height: 35px;
+  font-size: 18px;
+  color:#333;
+}
+.certificate-title img{
+  float: left;
+  vertical-align: middle;
+  width: 20px;
+  height:20px;
+  margin-top:4px;
+  margin-right:10px;
+}
+.certificate-desc{
+  height: 30px;
+  font-size: 12px;
+  color: #666;
+  border-bottom:1px solid #e4e4e4;
+}
+.certificate-message-four{
+  display: inline-block;
+  width: 100%;
+  padding-top:25px;
+}
+.certificate-binding{
+  width: 520px;
+  margin:0 auto;
+  padding: 0px 0 40px 0
+}
+
+.bg-user{
+  width: 200px;
+  height: 34px;
+  line-height: 34px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  border:1px solid #e3e3e3;
+  text-indent: 10px;
+  font-size: 14px;
+}
+
+.hide{
+  display: none;
+}
+.login-lf-box .red-xiang{
+  color:#fc4e40;
+  font-size:14px;
+}
+.login-lf-box tr{
+  /* height:60px; */
+  padding:0px;
+  margin: 10px 0px;
+  display:block;
+}
+.red-hou{
+  width: 110px;
+  margin-right: 20px;
+  color: #5c6066;
+}
+.js-hide{
+  color:#999;
+}
+/*这是控制显示隐藏的错误提示语*/
+.hiden-visi{
+  visibility: hidden;
+}
+/*这是控制显示隐藏的错误提示语*/
+.juli{
+  margin-right:26px;
+}
+.block-2{
+  height:326px; 
+  padding-bottom:20px;
+  border-bottom:1px solid #cccccc;
+}
+.certificate-btn{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.btn-preve{
+  display:inline-block;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  cursor:pointer;
+  border-radius: 2px;
+  background-color: #35b558;
+  border:1px solid #35b558;
+}
+.btn-cance{
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  cursor:pointer;
+  border-radius: 2px;
+  background-color: #35b558;
+  border:1px solid #35b558;
+  margin-left:10px;
+}
+
+/*第三页*/
+.certificate-container-three{
+  position: relative;
+  width: 685px;
+  display: inline-block;
+  padding:40px;
+}
+.container-close{
+  position: absolute;
+  top:12px;
+  right: 15px;
+  width:25px;
+  height:25px;
+  border-radius: 4px;
+  cursor: pointer;
+  background: url(../img/close.png) no-repeat center center #fff;
+}
+
+.certificate-success{
+  text-align: center;
+  height: 230px;
+}
+.user-pic{
+  width: 80px;
+  height: 80px;
+  margin:0 auto;
+  position: relative;
+}
+.user-pic .user-photo{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.user-pic .user-icno{
+  position: absolute;
+  bottom: 0;
+  right: -13px;
+  width: 40px;
+  height: 35px;
+}
+.success-name{
+  font-size: 16px;
+  height: 20px;
+  line-height:20px;
+  margin-top:10px;
+  color:#666;
+}
+.success-title{
+  height: 30px;
+  line-height: 30px;
+  font-size:20px;
+  color: #333;
+  margin-top:10px;
+}
+.success-watch{
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
+}
+.success-studing{
+  margin-top: 20px;
+}
+.success-studing a{
+  font-size: 16px;
+  color: #35b558;
+  text-decoration: none;
+}

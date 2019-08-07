@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>个人认证弹窗</title>
+  <link rel="stylesheet" type="text/css" href="css/formBtn.css">
+  <link rel="stylesheet" href="css/ui-form.css">
+
+</head>
+<body>
+  <div class="popup-context">
+    <div class="popup-container">
+      <div class="guarantee-container">
+        <div class="guarantee-close"></div>
+        <div class="guarantee-message">
+          <h3 class="guarantee-title">保单资料表</h3>
+          <div class="message-container">
+            <div class="name-content">
+              <span class="name-title">姓名:</span>
+              <input class="name-input" value="katiao" disabled></input>
+            </div>
+            <div class="gander-content">
+              <span class="gander-title">性别:</span>
+              <input class="gander-input" value="女" disabled></input>
+            </div>
+            <div class="number-message">
+              <span class="date-title">出生日期：</span>
+              <input class="date-input" value="1996-01-01" disabled></input>
+            </div> 
+            <div class="number-content">
+              <span clsss="number-title">身份证号码：</span>
+              <input class="number-input" value="441424199691915080" disabled></input>
+            </div>
+            <div class="addreen-message">
+              <span class="numberAddre-title">地址:</span>
+              <input class="addre-input" value="  慕拉士大马路, 大达新吨-亨通楼2楼AO 澳门" disabled></input>
+            </div>
+          </div>
+          <h3 class="fill-title">可填写</h3>
+          <div  class="message-input">
+            <div class="phone-content">
+              <span class="phone-title">联络电话：</span>
+              <input class="phone-input"></input>
+            </div>
+            <div class="month-content">
+              <span class="month-title">月收入:</span>
+              <input class="month-input"></input>
+            </div>
+          </div>
+          <div class="from-container">
+            <p class="from-status">保险项目:</p>
+            <ul class="select-list">
+              <li data-value="1" class="list-item travel">
+                <div class="form-box">
+                  <input class="ui-radio" type="radio" name="radio" id="radio1" checked> 
+                  <label for="radio1" >旅游保险</label>
+                </div>
+                
+              </li>
+              <li data-value="2" class="list-item car">
+                <div class="form-box">
+                  <input class="ui-radio" type="radio" name="radio" id="radio2" checked> 
+                  <label for="radio2">车险</label>
+                </div>
+                
+              </li>
+              <li data-value="3" class="list-item medical">
+                <div class="form-box">
+                  <input class="ui-radio" type="radio" name="radio" id="radio3" checked> 
+                  <label for="radio3">医疗保险</label>
+                </div>
+                
+              </li>
+            </ul>
+          </div>
+
+
+          <div class="from-one-travel">
+            <ul class="status-select">
+              <li data-value="1" class="status-item student">全球计划</li>
+              <li data-value ="2" class="status-item career">欧洲计划</li>
+              <li data-value ="3" class="status-item unemployed">亚洲计划</li>
+            </ul>
+          </div>
+          <div class="from-two-car">
+            <ul class="status-select">
+              <li data-value="1" class="status-item student">汽车全保保险计划</li>
+              <li data-value ="2" class="status-item career">汽车第三者保险计划</li>
+            </ul>
+          </div>
+          <div class="from-two-medical">
+            <ul class="status-select">
+              <li data-value="1" class="status-item student">全面医疗保险</li>
+              <li data-value ="2" class="status-item career">普通医疗保险</li>
+            </ul>
+          </div>
+
+          <div class="from-two-medical">
+            <p class="travel-insurance">支付方式:</p>
+            <ul class="status-select">
+              <li data-value="1" class="status-item student">现金</li>
+              <li data-value ="2" class="status-item career">自动转账</li>
+              <li data-value ="2" class="status-item career">信用卡ATM汇款</li>
+            </ul>
+          </div>
+          <div class="from-btn">
+            <button class="btn-sure" id="showTemplete">确定</button>
+            <button class="btn-cancel" id="showRemone">取消</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
